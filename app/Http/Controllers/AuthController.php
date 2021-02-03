@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -65,7 +66,8 @@ class AuthController extends Controller
 
     public function user(Request $req)
     {
-        return response()->json($req->user());
+        $user = Auth::user();
+        return response()->json(['data' => $user], 200);
     }
 
     public function logout(Request $req)
