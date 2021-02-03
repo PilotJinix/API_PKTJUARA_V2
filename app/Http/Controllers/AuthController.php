@@ -9,7 +9,7 @@ use App\User;
 
 class AuthController extends Controller
 {
-    public function signup(Request $req)
+    public function register(Request $req)
     {
         $req->validate([
             'username' => 'required',
