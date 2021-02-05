@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::post('auth/login', 'AuthController@login');
-Route::post('auth/register', 'AuthController@register');
+Route::post('login', 'AuthController@login');
+Route::post('register', 'AuthController@register');
 
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('logout', 'AuthController@logout');
